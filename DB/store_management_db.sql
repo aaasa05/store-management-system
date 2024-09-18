@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2024 at 02:14 AM
+-- Generation Time: Sep 18, 2024 at 08:47 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -38,10 +38,8 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`category_id`, `category_name`, `category_entry_date`) VALUES
-(21, 'Fashion', '2024-04-30'),
-(38, 'Fabric', '2023-12-05'),
-(39, 'Accessories', '2024-04-05'),
-(40, 'Fabric', '2024-12-04');
+(50, 'Fabric', '2024-05-26'),
+(51, 'Accessories', '2023-02-04');
 
 -- --------------------------------------------------------
 
@@ -62,11 +60,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `product_name`, `product_category`, `product_code`, `product_entry_date`) VALUES
-(22, 'rayon', 21, '123', '2024-04-13'),
-(23, 'cotton', 38, '123', '2023-01-08'),
-(24, 'wool', 21, '123', '2023-10-08'),
-(25, 'polyster', 21, '321', '2024-04-04'),
-(26, 'cotton', 40, '123', '2024-05-14');
+(1, 'Polyster', 50, 'ZZZZZ', '2024-06-30'),
+(2, 'Cotton', 50, '1111', '');
 
 -- --------------------------------------------------------
 
@@ -86,12 +81,10 @@ CREATE TABLE `spend_product` (
 --
 
 INSERT INTO `spend_product` (`spend_product_id`, `spend_product_name`, `spend_product_quantity`, `spend_product_entry_date`) VALUES
-(5, 12, 15, '2024-05-03'),
-(7, 14, 30, '2024-04-30'),
-(8, 20, 12, '2024-04-09'),
-(10, 21, 3, '2024-04-10'),
-(11, 23, 50, '2023-12-04'),
-(12, 22, 50, '2024-05-15');
+(1, 1, 1790, ''),
+(3, 1, 20, ''),
+(4, 1, 30, ''),
+(5, 1, 150, '');
 
 -- --------------------------------------------------------
 
@@ -111,13 +104,19 @@ CREATE TABLE `store_product` (
 --
 
 INSERT INTO `store_product` (`store_product_id`, `store_product_name`, `store_product_quantity`, `store_product_entry_date`) VALUES
-(5, 12, 60, '2024-04-30'),
-(6, 14, 100, '2024-05-11'),
-(9, 11, 65, '2024-05-08'),
-(10, 20, 40, '2024-04-09'),
-(11, 21, 14, '2024-04-10'),
-(12, 22, 1000, '2024-02-23'),
-(13, 23, 1400, '2023-12-08');
+(1, 1, 600, ''),
+(2, 1, 400, ''),
+(3, 1, 300, ''),
+(4, 1, 200, ''),
+(5, 0, 100, ''),
+(6, 200, 200, ''),
+(7, 200, 200, ''),
+(8, 200, 200, ''),
+(9, 222, 222, ''),
+(10, 200, 200, ''),
+(11, 300, 300, ''),
+(12, 1, 100, ''),
+(13, 1, 400, '');
 
 -- --------------------------------------------------------
 
@@ -139,8 +138,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`user_id`, `user_first_name`, `user_last_name`, `user_email`, `user_password`) VALUES
 (1, 'Afroza', 'Asa', 'afroza2002@gmail.com', '1234'),
-(2, 'Daliya', 'Akter', 'daliya@akter.com', '1111'),
-(4, 'Parvez', 'Ahmed', 'parvez@ahmed.com', '1234');
+(2, 'Daliya', 'Ahmed', 'daliya@akter.com', '1111'),
+(3, 'Syma', 'Parvin', 'syma@gmail.com', '2356'),
+(7, 'Arafa', 'akter', 'daliy@akter.com', '');
 
 --
 -- Indexes for dumped tables
@@ -184,19 +184,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `spend_product`
 --
 ALTER TABLE `spend_product`
-  MODIFY `spend_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `spend_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `store_product`
@@ -208,7 +208,7 @@ ALTER TABLE `store_product`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
